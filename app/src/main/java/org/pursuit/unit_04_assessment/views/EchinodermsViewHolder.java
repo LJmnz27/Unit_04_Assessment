@@ -31,7 +31,7 @@ public class EchinodermsViewHolder extends RecyclerView.ViewHolder {
         context = itemView.getContext();
     }
 
-    public void onBind (String echinoderm){
+    public void onBind (final String echinoderm){
         MessageItem messageItem = new MessageItem();
         echinodermsTextView.setText(echinoderm);
         Picasso.get().load(messageItem.getImage()).into(imageView);
@@ -40,7 +40,7 @@ public class EchinodermsViewHolder extends RecyclerView.ViewHolder {
             public void onClick(View v) {
               Intent intent = new Intent(context, SecondActivity.class);
               context.startActivity(intent);
-              intent.putExtra(TAG,"more data");
+              intent.putExtra("echinoderm",echinoderm);
 
             }
         });
